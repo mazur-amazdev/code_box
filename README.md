@@ -1,39 +1,54 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Code Box 
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+Code Box is a growing collection of useful code snippets for flutter and/or dart. Feel free to contribute by yourself.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+# Current Features
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## List 
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
+### flatMap
 ```dart
-const like = 'sample';
+import 'package:code_box/code_box.dart';
+
+/// for example youve got a column with conditional build
+Widget build(BuildContext context) {
+    return Column(
+        children: [
+            (text != null) ? Text("test") : null,
+            Text("next Line"),
+            (secondText != null) ? Text("second Text") : null
+        ] /// usually you would be told that
+        /// you cant build the children like that because null is not a type of widget
+        /// with flat map you can call
+        .flatMap() /// the magic happens and the conditional build starts :)   
+    );
+}
 ```
 
-## Additional information
+### unique
+```dart  
+    final list = ["test", "test", "test1", "test2", "test4", "test1", "test2"];
+    final List<String> uniqued = list.unique(); /// magic happens and the list is uniqued by its type
+```
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Widget Modifier
+
+### padding & scrollbar & safearea 
+
+basic features holding the normal initializer from those base widgets.
+
+```dart
+Widget build(BuildContext context) {
+    return Scaffold(
+        body: Column(
+            children: [
+                Text("test"),
+                Text("test2")
+            ]
+        ).padding(left: 15, right: 15, bottom: 5)
+        .safeArea()
+        // personal opinion but long build blocs with paddings get more readable
+        // same usage with safe area and scrollbar
+    );
+}
+```
