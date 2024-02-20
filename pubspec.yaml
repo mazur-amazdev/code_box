@@ -1,6 +1,7 @@
 name: code_box
 description: "Helpful extensions for your daily work making your code more readable."
-version: 1.0.0
+version: 1.0.1
+repository: https://github.com/mazur-amazdev/code_box
 
 environment:
   sdk: '>=3.2.1 <4.0.0'
