@@ -1,3 +1,5 @@
+import 'package:code_box/src/CodeBoxIdentifiable.dart';
+import 'package:code_box/src/CodeBoxSet.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:code_box/code_box.dart';
 
@@ -21,4 +23,21 @@ void main() {
     final List<String> uniqued = list.unique();
     expect(uniqued, ["test", "test1", "test2", "test4"]);
   });
+
+  test("check if first or null works", () {
+    var testList = {Test(id: "1"), Test(id: "2"), Test(id: "3")};
+    var notNull = testList.firstIdentifiedOrNull("1");
+    expect(notNull != null, true);
+    var isNull = testList.firstIdentifiedOrNull("-1");
+    expect(isNull == null, true);
+  });
+}
+
+/// the test for Identifiable
+///
+final class Test implements Identifiable {
+  Test({required this.id});
+
+  @override
+  String id;
 }
