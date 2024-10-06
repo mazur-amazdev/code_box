@@ -1,3 +1,6 @@
+## 1.1.1
+again export fix, been a while
+
 ## 1.1.0
 Add CodeBox Identifiable and better set usages
 
