@@ -1,3 +1,6 @@
+## 1.1.0
+Add CodeBox Identifiable and better set usages
+
 ## 1.0.1
 Export fix, show WidgetModifier
 
