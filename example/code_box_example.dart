@@ -15,12 +15,12 @@ final class TestWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
             children: injected
-                .unique()
+                // .unique()
 
                 /// we only want each entry once
                 /// just want to show the strings from the injected list
                 .map((e) {
-                  (e != String) ? null : Text(e);
+                  (e != String) ? null : Text(e.id);
                 })
 
                 /// make the map to list
