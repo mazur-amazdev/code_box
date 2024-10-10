@@ -1,3 +1,6 @@
+# 1.2.1
+export fix as usual
+
 ## 1.2.0
 update the unique logic on a list
 
