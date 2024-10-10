@@ -1,3 +1,6 @@
+## 1.2.0
+update the unique logic on a list
+
 ## 1.1.2
 fix to non late
 
