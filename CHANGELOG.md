@@ -1,3 +1,6 @@
+## 1.1.2
+fix to non late
+
 ## 1.1.1
 again export fix, been a while
 
