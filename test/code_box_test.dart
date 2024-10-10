@@ -1,4 +1,5 @@
 import 'package:code_box/src/CodeBoxIdentifiable.dart';
+import 'package:code_box/src/CodeBoxList.dart';
 import 'package:code_box/src/CodeBoxSet.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:code_box/code_box.dart';
@@ -19,9 +20,16 @@ void main() {
     expect(flatmapped, ["test", "test1", "test2", "test3", "test4"]);
   });
   test('check if the list could be uniqued by its type', () {
-    final list = ["test", "test", "test1", "test2", "test4", "test1", "test2"];
-    final List<String> uniqued = list.unique();
-    expect(uniqued, ["test", "test1", "test2", "test4"]);
+    final list = [
+      Test(id: "1"),
+      Test(id: "2"),
+      Test(id: "3"),
+      Test(id: "1"),
+      Test(id: "2"),
+      Test(id: "3")
+    ];
+    final List<Test> uniqued = list.unique();
+    expect(uniqued.length == 3, true);
   });
 
   test("check if first or null works", () {

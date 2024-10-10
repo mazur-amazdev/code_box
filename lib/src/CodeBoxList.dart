@@ -1,3 +1,5 @@
+import 'package:code_box/code_box.dart';
+
 extension CodeBoxList on List {
   /// flatten a list of any type to wanted type of t
   /// e.g. wanted is List<String>
@@ -29,21 +31,23 @@ extension CodeBoxList on List {
     /// return the internal list
     return internalList;
   }
+}
 
+extension IdentifiableCodeBoxList<T extends Identifiable> on List<T> {
   /// returns the uniqued list
-  List<T> unique<T>() {
+  List<T> unique() {
     /// internal uniqued list
-    List<T> uniqued = [];
+    Set<T> uniqued = {};
 
     /// iterate through this
-    forEach((element) {
+    for (var element in this) {
       /// if uniqued doesnt contain add element
-      if (!uniqued.contains(element)) {
+      if (uniqued.firstIdentifiedOrNull(element.id) == null) {
         uniqued.add(element);
       }
-    });
+    }
 
     /// return the uniqued list
-    return uniqued;
+    return uniqued.toList();
   }
 }
