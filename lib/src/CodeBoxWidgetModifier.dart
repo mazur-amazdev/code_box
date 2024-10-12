@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 extension CodeBoxWidgetModifier on Widget {
@@ -39,5 +40,13 @@ extension CodeBoxWidgetModifier on Widget {
         minimum: minimum,
         maintainBottomViewPadding: maintainBottomViewPadding,
         child: this);
+  }
+
+  /// adds a onTap Gesture
+  Widget onTap(void Function() onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: this,
+    );
   }
 }

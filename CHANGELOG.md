@@ -1,4 +1,7 @@
-# 1.2.1
+## 1.3.0
+add on tap modifier
+
+## 1.2.1
 export fix as usual
 
 ## 1.2.0
