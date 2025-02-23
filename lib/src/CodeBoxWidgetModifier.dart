@@ -49,4 +49,8 @@ extension CodeBoxWidgetModifier on Widget {
       child: this,
     );
   }
+
+  Widget frame(double? height, double? width) {
+    return SizedBox(height: height, width: width, child: this);
+  }
 }
